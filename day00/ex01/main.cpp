@@ -43,11 +43,11 @@ Contact user_input_add(Contact contact)
 }
 
 
-void user_input_search(std::string input, Contact *contact)
+void user_input_search(std::string input, Contact &contact)
 {
     int i = 0;
     std::cout << "hello" << std::endl;
-    std::cout.width(10); std::cout << std::right << contact->getFirstName();
+    std::cout.width(10); std::cout << std::right << contact.getFirstName();
 
     std::cout.width(10); std::cout << std::right << "       INDEX   |";
     std::cout.width(10); std::cout << std::right << "   FIRST NAME  |";
@@ -55,13 +55,13 @@ void user_input_search(std::string input, Contact *contact)
     std::cout.width(10); std::cout << std::right << "   NICKNAME    |";
     std::cout << std::endl;
     std::cout.width(10); std::cout << std::right << i;
-    std::cout.width(10); std::cout << std::right << contact->getFirstName();
-    std::cout.width(10); std::cout << std::right << contact->getLastName();
-    std::cout.width(10); std::cout << std::right << contact->getNickName();
+    std::cout.width(10); std::cout << std::right << contact.getFirstName();
+    std::cout.width(10); std::cout << std::right << contact.getLastName();
+    std::cout.width(10); std::cout << std::right << contact.getNickName();
     input = "haha";
 }
 
-void check_input(std::string input, Contact contact)
+void check_input(std::string input, Contact &contact)
 {
     if (input == "EXIT")
         user_input_exit();
@@ -71,7 +71,7 @@ void check_input(std::string input, Contact contact)
         std::cout << "hello: " << contact.getFirstName() << std::endl;
     }
     else if (input == "SEARCH")
-        user_input_search(input, &contact);
+        user_input_search(input, contact);
     else
         return;
 }
