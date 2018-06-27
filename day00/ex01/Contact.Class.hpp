@@ -1,6 +1,8 @@
 #ifndef CONTACT_H_
 #define CONTACT_H_
 #include <iostream>
+#include <ctype.h>
+
 #define MAX_CONTACT 8
 #define CHAR_WIDTH 10
 
@@ -20,28 +22,28 @@ class Contact
     public:
         Contact();//constructor
         ~Contact();//destructor
-        void           setFirstName(std::string input) { this->firstName = input; }
-        void           setLastName(std::string input) { this->lastName = input; }
-        void           setNickName(std::string input) { this->nickName = input; }
-        void           setLogin(std::string input) { this->login = input; }
-        void           setPostalAddress(std::string input) { this->postalAddress = input; }
-        void           setEmailAddress(std::string input) { this->emailAddress = input; }
-        void           setPhoneNumber(std::string input) { this->phoneNumber = input; }
-        void           setBirthDate(std::string input) { this->birthDate = input; }
-        void           setFavoriteMeal(std::string input) { this->favoriteMeal = input; }
-        void           setUnderwearColor(std::string input) { this->underwearColor = input; }
-        void           setDarkestSecret(std::string input) { this->darkestSecret = input; }
-        std::string    getFirstName() { return this->firstName; }
-        std::string    getLastName() { return this->lastName; }
-        std::string    getNickName() { return this->nickName; }
-        std::string    getLogin() { return this->login; }
-        std::string    getPostalAddress() { return this->postalAddress; }
-        std::string    getEmailAddress() { return this->emailAddress; }
-        std::string    getPhoneNumber() { return this->phoneNumber; }
-        std::string    getBirthDate() { return this->birthDate; }
-        std::string    getFavoriteMeal() { return this->favoriteMeal; }
-        std::string    getUnderwearColor() { return this->underwearColor; }
-        std::string    getDarkestSecret() { return this->darkestSecret; }
+        void           setFirstName(std::string input);
+        void           setLastName(std::string input);
+        void           setNickName(std::string input);
+        void           setLogin(std::string input);
+        void           setPostalAddress(std::string input);
+        void           setEmailAddress(std::string input);
+        void           setPhoneNumber(std::string input);
+        void           setBirthDate(std::string input);
+        void           setFavoriteMeal(std::string input);
+        void           setUnderwearColor(std::string input);
+        void           setDarkestSecret(std::string input);
+        std::string    getFirstName();
+        std::string    getLastName();
+        std::string    getNickName();
+        std::string    getLogin();
+        std::string    getPostalAddress();
+        std::string    getEmailAddress();
+        std::string    getPhoneNumber();
+        std::string    getBirthDate();
+        std::string    getFavoriteMeal();
+        std::string    getUnderwearColor();
+        std::string    getDarkestSecret();
 };
 
 void usage(int argc, char **argv);

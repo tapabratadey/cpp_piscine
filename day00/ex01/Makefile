@@ -13,7 +13,7 @@
 NAME = phonebook
 CC = clang++
 FLAGS = -Wall -Wextra -Werror
-SRC = main.cpp phonebook.cpp func.cpp contact.cpp
+SRC = main.cpp phonebook.Class.cpp func.cpp contact.Class.cpp
 
 all: $(NAME)
 

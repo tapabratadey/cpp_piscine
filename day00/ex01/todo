@@ -1,5 +1,3 @@
--write a program that behaves like an awesomoe phonebook
--accept ADD, SEARCH, EXIT commands. discard others.
 -only 8 contacts can be added. 9th contact will be error
 -contacts start empty
 -if EXIT, 

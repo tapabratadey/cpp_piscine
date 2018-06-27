@@ -4,97 +4,82 @@
 Contact user_input_add(Contact contact)
 {
     std::string input;
+    // std::string
 
     std::cout << "First name: ";
-    std::cin >> input;
+    std::getline (std::cin,input);
     contact.setFirstName(input);
     std::cout << "Last name: ";
-    std::cin >> input;
+    std::getline (std::cin,input);
     contact.setLastName(input);
     std::cout << "Nickname: ";
-    std::cin >> input;
+    std::getline (std::cin,input);
     contact.setNickName(input);
     std::cout << "Login: ";
-    std::cin >> input;
+    std::getline (std::cin,input);
     contact.setLogin(input);
     std::cout << "Postal Address: ";
-    std::cin >> input;
+    std::getline (std::cin,input);
     contact.setPostalAddress(input);
     std::cout << "Email Address: ";
-    std::cin >> input;
+    std::getline (std::cin,input);
     contact.setEmailAddress(input);
     std::cout << "Phone Number: ";
-    std::cin >> input;
+    std::getline (std::cin,input);
     contact.setPhoneNumber(input);
     std::cout << "Birthdate: ";
-    std::cin >> input;
+    std::getline (std::cin,input);
     contact.setBirthDate(input);
     std::cout << "Favorite Meal: ";
-    std::cin >> input;
+    std::getline (std::cin,input);
     contact.setFavoriteMeal(input);
     std::cout << "Underwear color: ";
-    std::cin >> input;
+    std::getline (std::cin,input);
     contact.setUnderwearColor(input);
     std::cout << "Darkest Secret: ";
-    std::cin >> input;
+    std::getline (std::cin,input);
     contact.setDarkestSecret(input);
 
     return contact;
 }
 
-
-void user_input_search(std::string input, Contact &contact)
+int check_input(std::string input, Contact &contact)
 {
-    int i = 0;
-    std::cout << "hello" << std::endl;
-    std::cout.width(10); std::cout << std::right << contact.getFirstName();
-
-    std::cout.width(10); std::cout << std::right << "       INDEX   |";
-    std::cout.width(10); std::cout << std::right << "   FIRST NAME  |";
-    std::cout.width(10); std::cout << std::right << "   LAST NAME   |";
-    std::cout.width(10); std::cout << std::right << "   NICKNAME    |";
-    std::cout << std::endl;
-    std::cout.width(10); std::cout << std::right << i;
-    std::cout.width(10); std::cout << std::right << contact.getFirstName();
-    std::cout.width(10); std::cout << std::right << contact.getLastName();
-    std::cout.width(10); std::cout << std::right << contact.getNickName();
-    input = "haha";
-}
-
-void check_input(std::string input, Contact &contact)
-{
-    if (input == "EXIT")
+    Phonebook phonebook;
+    if (input == "EXIT" || input == "exit")
         user_input_exit();
-    else if (input == "ADD")
+    else if (input == "ADD" || input == "add")
     {
         contact = user_input_add(contact);
-        std::cout << "hello: " << contact.getFirstName() << std::endl;
+        phonebook.addContact(contact);
+        return (1);
     }
-    else if (input == "SEARCH")
-        user_input_search(input, contact);
+    else if (input == "SEARCH" || input == "search")
+        phonebook.print();
     else
-        return;
+        return(2);
+    return (0);
 }
-#if 0
+
 void only_search_n_exit(Contact contact)
 {
     std::string input;
+    Phonebook phonebook;
 
     std::cout << std::endl << "You can only choose one of the following: " << std::endl;
     std::cout << "2) SEARCH" << std::endl;
     std::cout << "3) EXIT" << std::endl << std::endl;
     std::cout << "User input: ";
 
-    std::cin >> input;
-    if (input == "EXIT")
+    std::getline (std::cin,input);
+    if (input == "EXIT" || input == "exit")
         user_input_exit();
-    else if (input == "SEARCH")
+    else if (input == "SEARCH" || input == "search")
     {
-        user_input_search(input, contact);
+        phonebook.print();
         only_search_n_exit(contact);
     }
 }
-#endif
 
 int main(int argc, char **argv)
 {
@@ -106,16 +91,15 @@ int main(int argc, char **argv)
     usage(argc, argv); //usage
     while (i <= MAX_CONTACT)
     {
-        #if 0
-        if (i == 8){
+        if (i == 8)
+        {
             only_search_n_exit(contact);
-            break;
+            continue;
         }
-        #endif
-        ask_user(); //ask the user
-        std::cin >> input; //store user input in input
-        check_input(input, contact);//if exit/add/search
-        i++;
+        ask_user();                                //ask the user
+        std::getline (std::cin,input);           //store user input in input
+        if (check_input(input, contact) == 1) //if exit/add/search
+            i++;
     }
     return (0);
 }
