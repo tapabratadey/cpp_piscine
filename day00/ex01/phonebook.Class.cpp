@@ -55,10 +55,10 @@ void Phonebook::printColumn()
     std::string frstName = "FIRST NAME";
     std::string lstName = "LAST NAME";
     std::string nckName = "NICKNAME";
-    std::cout.width(10); std::cout << std::endl << std::right << index.append("|");
-    std::cout.width(10); std::cout << std::right << frstName.append("|");
-    std::cout.width(10); std::cout << std::right << lstName.append("|");
-    std::cout.width(10); std::cout << std::right << nckName.append("|") << std::endl;
+    std::cout << std::setw(10) << std::right << std::right << index.append("|");
+    std::cout << std::setw(10) << std::right << std::right << frstName.append("|");
+    std::cout << std::setw(10) << std::right << std::right << lstName.append("|");
+    std::cout << std::setw(10) << std::right << std::right << nckName.append("|") << std::endl;
     std::cout.width(20); std::cout << "   _______________________________________";
     std::cout << std::endl << std::endl;
 }
@@ -74,11 +74,11 @@ void Phonebook::print()
     Phonebook::printColumn();
     while (i < size)
     {
-        std::cout.width(10); std::cout << std::right << i;
+        std::cout << std::setw(10) << std::right << i;
         std::cout << "|";
         if (allContacts[i].getFirstName().length() > 10)
         {
-            std::cout << std::setw(10) << std::right << allContacts[i].getFirstName().substr(0, 9).append(".|");
+            std::cout << std::setw(10) << std::right << allContacts[i].getFirstName().substr(0, 8).append(".|");
         }
         if (allContacts[i].getFirstName().length() < 10)
         {
@@ -86,7 +86,7 @@ void Phonebook::print()
         }
         if (allContacts[i].getLastName().length() > 10)
         {
-            std::cout << std::setw(10) << std::right << allContacts[i].getLastName().substr(0, 9).append(".|");
+            std::cout << std::setw(10) << std::right << allContacts[i].getLastName().substr(0, 8).append(".|");
         }
         if (allContacts[i].getLastName().length() < 10)
         {
@@ -94,7 +94,7 @@ void Phonebook::print()
         }
         if (allContacts[i].getNickName().length() > 10)
         {
-            std::cout << std::setw(10) << std::right << allContacts[i].getNickName().substr(0, 9).append(".|");
+            std::cout << std::setw(10) << std::right << allContacts[i].getNickName().substr(0, 8).append(".|");
         }
         if (allContacts[i].getNickName().length() < 10)
         {
