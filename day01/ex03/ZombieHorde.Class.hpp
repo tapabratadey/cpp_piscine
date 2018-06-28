@@ -18,7 +18,7 @@
 class ZombieHorde
 {
         int N;
-        Zombie *zombieHorde;
+        Zombie **zombieHorde;
     public:
         ZombieHorde(int);
         ~ZombieHorde();

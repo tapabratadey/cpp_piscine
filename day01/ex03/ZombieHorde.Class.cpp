@@ -19,10 +19,10 @@ ZombieHorde::ZombieHorde(int N) : N(N)
     int i = 0;
     std::string type[] = {"type1", "type2"};
     std::string name[] = {"zombie1", "zombie2"};
-    this->zombieHorde = new Zombie[N];
+    this->zombieHorde = new Zombie*[N];
     while (i < N)
     {
-        this->zombieHorde[i] = Zombie(type[rand() % 2], name[rand() % 2]);
+        this->zombieHorde[i] = new Zombie(type[rand() % 2], name[rand() % 2]);
         i++;
     }
     std::cout << "ZombieHorde Constructor invoked." << std::endl;
@@ -30,6 +30,12 @@ ZombieHorde::ZombieHorde(int N) : N(N)
 
 ZombieHorde::~ZombieHorde()
 {
+    int i = 0;
+    while (i < N)
+    {
+        delete zombieHorde[i];
+        i++;
+    }
     delete []zombieHorde;
     std::cout << "ZombieHorde destructor invoked." << std::endl;
 }
@@ -39,7 +45,7 @@ void ZombieHorde::announce()
     int i = 0;
     while (i < N)
     {
-        zombieHorde[i].announce();
+        zombieHorde[i]->announce();
         i++;
     }
 }

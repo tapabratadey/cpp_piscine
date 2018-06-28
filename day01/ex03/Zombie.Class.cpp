@@ -15,17 +15,18 @@
 
 Zombie::Zombie() 
 { 
-    // std::cout << "Zombie Constructor invoked" << std::endl;
+    std::cout << "Zombie() Constructor invoked" << std::endl;
 }
+
 Zombie::Zombie(std::string type, std::string name) : type(type), name(name) 
 { 
-    // std::cout << "Zombie Constructor invoked" << std::endl;
+    // std::cout << "Zombie(type, name) Constructor invoked" << std::endl;
 }
 
 Zombie::~Zombie() 
 {
-    std::cout << "<" + this->name + " (" + this->type + ")> Dead" << std::endl;
     // std::cout << "Zombie Destructor invoked" << std::endl;
+    std::cout << "<" + this->name + " (" + this->type + ")> Dead" << std::endl;
 }
 
 void Zombie::announce() 
