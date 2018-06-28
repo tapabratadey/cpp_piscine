@@ -19,8 +19,14 @@
 int main()
 {
     ZombieEvent zombieEvent;
-
-
+    #if 0
+        -srand(x) function sets the seed of the random number
+            generator algorithm used by the function rand().
+        -A seed value of 1 is the default setting yielding the
+            same sequence of values as if srand(x) were not used.
+        -Any other value for the seed produces a different sequence
+            srand(time(NULL));
+    #endif
     srand(time(NULL));
     zombieEvent.setZombieType("type1");
     Zombie *zombie = zombieEvent.randomChump();
