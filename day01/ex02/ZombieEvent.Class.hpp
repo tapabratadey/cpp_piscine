@@ -23,7 +23,7 @@ class ZombieEvent
         ~ZombieEvent();
         void        setZombieType(std::string);
         Zombie      *newZombie(std::string name);
-        Zombie      *randomChump();
+        void randomChump();
 };
 
 #endif //ZOMBIE_EVENT_CLASS_H

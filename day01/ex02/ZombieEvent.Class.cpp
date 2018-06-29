@@ -33,11 +33,12 @@ Zombie *ZombieEvent::newZombie(std::string name)
     return (new Zombie(type, name)); 
 }
 
-Zombie *ZombieEvent::randomChump()
+void ZombieEvent::randomChump()
 {
     Zombie *zombie;
     std::string zombieNames[] = {"Zombie1", "Zombie2"};
     zombie = newZombie(zombieNames[rand() % 2]);
     std::cout << zombie->announce() << std::endl;
-    return zombie;
+    delete zombie;
+    // return zombie;
 }

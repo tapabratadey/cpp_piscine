@@ -29,10 +29,10 @@ int main()
     #endif
     srand(time(NULL));
     zombieEvent.setZombieType("type1");
-    Zombie *zombie = zombieEvent.randomChump();
-    delete zombie;
-    zombieEvent.setZombieType("type2");
-    zombie = zombieEvent.randomChump();
-    delete zombie;
+    zombieEvent.randomChump();
+    // delete zombie;
+    // zombieEvent.setZombieType("type2");
+    // zombie = zombieEvent.randomChump();
+    // delete zombie;
     return (0);
 }
