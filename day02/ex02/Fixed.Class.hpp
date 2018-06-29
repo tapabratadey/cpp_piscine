@@ -35,10 +35,28 @@ class Fixed
         Fixed(const int);//constructor takes in integer
         Fixed(const float);//constructor takes in float
         Fixed &operator=(const Fixed &);//operator overload
+        bool operator>(const Fixed &);
+        bool operator<(const Fixed &);
+        bool operator>=(const Fixed &);
+        bool operator<=(const Fixed &);
+        bool operator==(const Fixed &);
+        bool operator!=(const Fixed &);
+        Fixed operator+(const Fixed &) const;
+        Fixed operator-(const Fixed &) const;
+        Fixed operator*(const Fixed &) const;
+        Fixed operator/(const Fixed &) const;
+        Fixed &operator++();//
+        Fixed &operator--();
+        Fixed operator--(int);//
+        Fixed operator++(int);//
         int getRawBits() const;//returns raw value of fpv
         void setRawBits(int const);//sets the raw value of fpv
         float toFloat() const;//toFloat func converts the fixed point value to floating point value
         int toInt() const;//toInt func converts the fixed point value to integer value
+        static Fixed &min(Fixed &, Fixed &);
+	    static const Fixed &min(const Fixed &, const Fixed &);
+	    static Fixed &max(Fixed &, Fixed &);
+	    static const Fixed &max(const Fixed &, const Fixed &);
 };
 
 std::ostream &operator<<(std::ostream &out, Fixed const &i);

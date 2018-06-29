@@ -109,6 +109,85 @@ std::ostream &operator<<(std::ostream &out, Fixed const &rhs)
     return out;
 }
 
+bool Fixed::operator>(const Fixed &compare)
+{
+    return this->fixedPointValue > compare.getRawBits();
+}
+
+bool Fixed::operator<(const Fixed &compare)
+{
+    return this->fixedPointValue < compare.getRawBits();
+}
+
+bool Fixed::operator>=(const Fixed &compare)
+{
+    return this->fixedPointValue >= compare.getRawBits();
+}
+
+bool Fixed::operator<=(const Fixed &compare)
+{
+    return this->fixedPointValue <= compare.getRawBits();
+}
+
+bool Fixed::operator==(const Fixed &compare)
+{
+    return this->fixedPointValue == compare.getRawBits();
+}
+
+bool Fixed::operator!=(const Fixed &compare)
+{
+    return this->fixedPointValue != compare.getRawBits();
+}
+
+Fixed Fixed::operator+(const Fixed &compare) const
+{
+    return (Fixed(this->toFloat() + compare.toFloat()));
+}
+
+Fixed Fixed::operator-(const Fixed &compare) const
+{
+    return (Fixed(this->toFloat() - compare.toFloat()));
+}
+
+Fixed Fixed::operator*(const Fixed &compare) const
+{
+    return (Fixed(this->toFloat() * compare.toFloat()));
+}
+
+Fixed Fixed::operator/(const Fixed &compare) const
+{
+    if (compare.toFloat() != 0)
+        return (Fixed(this->toFloat() / compare.toFloat()));
+    std::cout << "cant divide by zero" << std::endl;
+    return (Fixed(0));
+}
+
+Fixed &Fixed::operator++()
+{
+    this->fixedPointValue += 1;
+    return *this;
+}
+
+Fixed &Fixed::operator--()
+{
+    this->fixedPointValue -= 1;
+    return *this;
+}
+
+Fixed Fixed::operator--(int)
+{
+    Fixed store(*this);
+    this->fixedPointValue -= 1;
+    return store;
+}
+
+Fixed Fixed::operator++(int)
+{
+    Fixed store(*this);
+    this->fixedPointValue += 1;
+    return store;
+}
+
                 /* MEMBER FUNCTIONS*/
 
 //getRawBits() returns raw value of fixed point value
@@ -134,4 +213,38 @@ int Fixed::toInt() const
 float Fixed::toFloat() const
 {
     return ((float)(this->fixedPointValue) / (1 << fractionalBits));
+}
+
+                /* NON-MEMBER FUNCTIONS*/
+
+Fixed &Fixed::min(Fixed &fixed1, Fixed &fixed2) 
+{
+    if (fixed1.toFloat() <= fixed2.toFloat())
+        return fixed1;
+    else
+        return fixed2;
+}
+
+const Fixed &Fixed::min(const Fixed &fixed1, const Fixed &fixed2) 
+{
+    if (fixed1.toFloat() <= fixed2.toFloat())
+        return fixed1;
+    else
+        return fixed2;
+}
+
+Fixed &Fixed::max(Fixed &fixed1, Fixed &fixed2) 
+{
+    if (fixed1.toFloat() <= fixed2.toFloat())
+        return fixed2;
+    else
+        return fixed1;
+}
+
+const Fixed &Fixed::max(const Fixed &fixed1, const Fixed &fixed2) 
+{
+    if (fixed1.toFloat() <= fixed2.toFloat())
+        return fixed2;
+    else
+        return fixed1;
 }
