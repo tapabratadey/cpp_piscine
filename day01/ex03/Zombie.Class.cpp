@@ -20,7 +20,7 @@ Zombie::Zombie()
 
 Zombie::Zombie(std::string type, std::string name) : type(type), name(name) 
 { 
-    // std::cout << "Zombie(type, name) Constructor invoked" << std::endl;
+    std::cout << "Zombie(type, name) Constructor invoked" << std::endl;
 }
 
 Zombie::~Zombie() 
