@@ -49,6 +49,9 @@ Fixed::Fixed(const Fixed &copy)
 
 #if 0
             OPERATOR OVERLOAD
+        checks if the old obj is not equal to the new obj
+            if not then assigns the instance to the value 
+        passed on by getRawBits()
 #endif
 
 //operator overload
