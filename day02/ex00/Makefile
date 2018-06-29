@@ -6,12 +6,12 @@
 #    By: tadey <marvin@42.fr>                       +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/06/28 16:03:44 by tadey             #+#    #+#              #
-#    Updated: 2018/06/28 16:03:45 by tadey            ###   ########.fr        #
+#    Updated: 2018/06/28 19:26:28 by tadey            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 
-NAME = zombie
+NAME = fpv
 CC = clang++
 FLAGS = -Wall -Wextra -Werror
 SRC = main.cpp Fixed.Class.cpp
