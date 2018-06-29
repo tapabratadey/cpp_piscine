@@ -43,8 +43,8 @@ Fixed::~Fixed()
 //copy constructor
 Fixed::Fixed(const Fixed &copy)
 {
-    *this = copy;
     std::cout << "Copy constructor called" << std::endl;
+    *this = copy;
 }
 
 #if 0
@@ -74,7 +74,7 @@ int Fixed::getRawBits() const
 //setRawBits() sets the raw value of fixed point value
 void Fixed::setRawBits(int const raw)
 {
-    this->fixedPointValue = raw;
     std::cout << "setRawBits member function called" << std::endl;
+    this->fixedPointValue = raw;
 }
 
