@@ -19,6 +19,13 @@
     const int Fixed::fractionalBits = 8; value will be constant
 #endif
 
+/*
+sfdjgadskjfgasdkfha
+asdffjsadhfkjahsdfklahs
+asdfjhasdkfhaskl
+
+*/
+
 const int Fixed::fractionalBits = 8;
 
 //default constructor
