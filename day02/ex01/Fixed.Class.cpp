@@ -102,6 +102,12 @@ Fixed &Fixed::operator=(const Fixed & rhs)
 }
 
 //operator overload<<
+#if 0
+    we are trying to overload an operator that is not 
+    native to class
+
+
+#endif
 std::ostream &operator<<(std::ostream &out, Fixed const &rhs)
 {
     // std::cout << "Insertion operator called" << std::endl;
