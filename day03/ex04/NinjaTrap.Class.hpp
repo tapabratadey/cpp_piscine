@@ -17,7 +17,7 @@
 #include "FragTrap.Class.hpp"
 #include "ScavTrap.Class.hpp"
 
-class NinjaTrap : public ClapTrap
+class NinjaTrap : public virtual ClapTrap
 {
         
     public:

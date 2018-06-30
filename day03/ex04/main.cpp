@@ -10,11 +10,6 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-
-#include "FragTrap.Class.hpp"
-#include "ScavTrap.Class.hpp"
-#include "ClapTrap.Class.hpp"
-#include "NinjaTrap.Class.hpp"
 #include "SuperTrap.Class.hpp"
 
 int main()
@@ -41,16 +36,17 @@ int main()
     name1.challengeNewcomer(name2.getName());
     return (0);
 #endif
-    // NinjaTrap ninjaTrap("voldemort");
-    // FragTrap fragTrap("harry");
-    // ScavTrap scavTrap("bitch");
-    // ClapTrap clapTrap("fuckThis");
+    NinjaTrap ninjaTrap("voldemort");
+    FragTrap fragTrap("harry");
+    ScavTrap scavTrap("bitch");
+    ClapTrap clapTrap("fuckThis");
     SuperTrap superTrap("whatdafaq");
 
     std::cout << std::endl << "Let's get this party started!" << std::endl << std::endl;
     std::cout << superTrap.getName() << ": Pew Pew" << std::endl << std::endl;
-    // ninjaTrap.ninjaShoebox(fragTrap);
-    // ninjaTrap.ninjaShoebox(scavTrap);
-    // ninjaTrap.ninjaShoebox(clapTrap);
-    // ninjaTrap.ninjaShoebox(ninjaTrap);
+    superTrap.vaultHunter_dot_exe(superTrap.getName());//parent- FragTrap
+    superTrap.ninjaShoebox(clapTrap);//parent- ninjaTrap
+    superTrap.ninjaShoebox(fragTrap);
+    superTrap.ninjaShoebox(scavTrap);
+    superTrap.ninjaShoebox(ninjaTrap);
 }

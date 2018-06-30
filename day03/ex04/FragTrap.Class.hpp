@@ -15,7 +15,7 @@
 #include <iostream>
 #include "ClapTrap.Class.hpp"
 
-class FragTrap : public ClapTrap
+class FragTrap : public virtual ClapTrap
 {
         unsigned int randomAttackDamage;//set to 50
     public:
