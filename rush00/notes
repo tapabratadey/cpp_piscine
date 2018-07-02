@@ -1,0 +1,4 @@
+Game Class (stores stats, game state, has functions to change state (move character, add enemies, etc)
+Creep Class -> Subclasses for different types of enemies
+
+Player class
