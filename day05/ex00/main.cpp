@@ -22,7 +22,7 @@ int main()
     std::cout << harry << std::endl;    
     std::cout << potter << std::endl;
 
-#if 0
+#if 1
     std::cout << "decrementing name" << std::endl;
     std::cout << "Decrement Name: " << tapa.getName() << std::endl;
     tapa+=5;
@@ -34,7 +34,7 @@ int main()
 
     std::cout << "error on incrementing" << std::endl;
 #endif
-#if 0
+#if 1
     std::cout << "errors on increment" << std::endl;
 
     std::cout << "Increment Bureaucrat: " << potter.getName() << std::endl;
@@ -53,7 +53,7 @@ int main()
         std::cout << "caught an unexpected exception" << std::endl;
     }
 #endif
-#if 0
+#if 1
     std::cout << "errors on decrement" << std::endl;
 
     std::cout << "Decrementing Bureaucrat: " << potter.getName() << std::endl;
@@ -72,7 +72,7 @@ int main()
     }
 #endif
 
-#if 0
+#if 1
     std::cout << "errors on increment" << std::endl;
 
     std::cout << "Increment Bureaucrat: " << harry.getName() << std::endl;
@@ -92,7 +92,7 @@ int main()
     }
 #endif
     // std::cout << harry << std::endl;
-#if 0
+#if 1
     std::cout << "errors on decrement" << std::endl;
 
     std::cout << "Decrementing Bureaucrat: " << harry.getName() << std::endl;

@@ -42,14 +42,18 @@ int main()
     }
 #endif
 
+#if 1
     std::cout << "double signing" << std::endl;
 	bool result = form5.beSigned(turnitaround);
 	if (result)
 		std::cout << "form signed twice." << std::endl << std::endl;
 	else
 		std::cout << "nope i will not let you sign for twice." << std::endl << std::endl;
+#endif 
 
-#if 0
+#if 1
+
+    std::cout << "extreme grade signing" << std::endl;
     try
     {
         Form form1("Driving permit", 70, 0);
