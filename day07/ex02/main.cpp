@@ -58,11 +58,11 @@ int main()
     }
     try
     {
-        num[6] = 6;
+        num[5] = 6;
     }
     catch(std::exception)
     {
-        std::cout << "cant init the array" << std::endl;
+        std::cout << "out of bounds" << std::endl;
     }
 
     //checking copy constructor

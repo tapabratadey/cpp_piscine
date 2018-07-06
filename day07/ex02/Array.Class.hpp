@@ -54,7 +54,7 @@ class Array
 
         T &operator[](unsigned int elemIndex)//operator[]
         {
-            if (elemIndex > this->size)
+            if (elemIndex >= this->size)
                 throw std::exception();
             else
                 return (this->array[elemIndex]);            
