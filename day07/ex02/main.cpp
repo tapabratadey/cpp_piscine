@@ -23,7 +23,7 @@ int main()
         for (int i = 0; i < (int)numElem; i++){
             num[i] = j;
             j++;
-            std::cout << num[i];
+            std::cout << num[i] << " ";
         }
         std::cout << std::endl;
     }
@@ -48,16 +48,14 @@ int main()
         std::cout << "cant init the array" << std::endl;
     }
 
-    //int
+    //int checking for errors
     int j = 0;
     unsigned int numElem = 5;
     Array<int> num = Array<int>(numElem);
     for (int i = 0; i < (int)numElem; i++){
         num[i] = j;
         j++;
-        std::cout << num[i];
     }
-    std::cout << std::endl;
     try
     {
         num[6] = 6;
@@ -65,7 +63,31 @@ int main()
     catch(std::exception)
     {
         std::cout << "cant init the array" << std::endl;
-    }    
+    }
+
+    //checking copy constructor
+    Array<int> numCpy = num;
+    std::cout << "copy constructor array size: " << numCpy.funcSize();
+    std::cout << std::endl;
+
+    //floats
+    try
+    {
+        float j = 1.1;
+        unsigned int numElem = 5;
+        Array<float> num = Array<float>(numElem);
+        for (int i = 0; i < (int)numElem; i++){
+            num[i] = j;
+            j++;
+            std::cout << num[i] << " ";
+        }
+        std::cout << std::endl;
+    }
+    catch(std::exception)
+    {
+        std::cout << "cant init the array" << std::endl;
+    }
+
 
     return (0);
 }

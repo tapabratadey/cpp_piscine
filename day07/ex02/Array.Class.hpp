@@ -46,7 +46,9 @@ class Array
         Array<T> &operator=(const Array<T> &rhs)//assigning operator
         {
             this->size = rhs.size;
-            this->array = rhs.array;
+            this->array = new T[rhs.size];
+            for (int i = 0; i < (int)size; i++)
+                this->array[i] = rhs.array[i];
             return *this;
         }
 
